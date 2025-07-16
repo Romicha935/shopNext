@@ -23,11 +23,12 @@ export const Search = () => {
        </Select>
     
        {/* search input */}
-       <Input className='flex-1 rounded-none dark:border-gray-200  bg-gray-100 text-black text-base h-full  ' placeholder={`search $`} name='q' type='search' />
+       <Input className='flex-1 rounded-none dark:border-gray-200  bg-gray-100 text-black text-base h-9  ' placeholder={`search $`} name='q' type='search' />
 
        {/* button */}
-       <Button type='submit' className='bg-primary text-primary-foreground text-black rounded-s-none rounded-e-md h-full px-3 py-2'/>
-       <SearchIcon className='w-5 h-5'/>
+       <Button type='submit' className='bg-primary text-primary-foreground text-black rounded-s-none rounded-e-md h-full px-3 py-2'>
+       <SearchIcon className='w-6 h-6'/>
+       </Button>
     </form>
   )
 }
