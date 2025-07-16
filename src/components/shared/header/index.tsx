@@ -9,7 +9,7 @@ import { MenuIcon } from 'lucide-react'
 import { data } from '@/lib/data'
 
 
-export const Index = () => {
+export const Header = () => {
   return (
     <header className='bg-black text-white'>
     <div className='px-2'>

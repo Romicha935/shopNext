@@ -27,7 +27,7 @@ export const Search = () => {
 
        {/* button */}
        <Button type='submit' className='bg-primary text-primary-foreground text-black rounded-s-none rounded-e-md h-full px-3 py-2'/>
-       <SearchIcon className='w-6 h-6'/>
+       <SearchIcon className='w-5 h-5'/>
     </form>
   )
 }
