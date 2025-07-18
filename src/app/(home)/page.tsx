@@ -13,12 +13,15 @@ export default function HomePage ()  {
             <HomeCarousel items={data.carousels}/>
             <CardItem cards={data.featureSections}/>
             {/* <ProductCard product={data.todaysDeals}/> */}
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+            <div className='bg-gray-100'>
+            <h2 className='text-2xl font-bold px-8'>Today's Deals</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2  p-4">
+         
         {data.todaysDeals.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}
       </div>
+          </div>
           </div>
   // <HomeLayout>
   // <h1>home page</h1>

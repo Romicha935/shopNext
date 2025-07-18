@@ -1,3 +1,4 @@
+ "use client"
 import Footer from '@/components/footer'
 import { Header } from '@/components/shared/header'
 import { store } from '@/redux/store'

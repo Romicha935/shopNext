@@ -15,13 +15,13 @@ export default function Rating({
 
   return (
     <div
-      className='flex items-center'
+      className='flex text-yellow-600 items-center'
       aria-label={`Rating: ${rating} out of 5 stars`}
     >
       {[...Array(fullStars)].map((_, i) => (
         <Star
           key={`full-${i}`}
-          className={`w-${size} h-${size} fill-primary text-primary`}
+          className={`w-${size} h-${size} fill-yellow-500 text-primary`}
         />
       ))}
       {partialStar > 0 && (

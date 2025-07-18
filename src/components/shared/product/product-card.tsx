@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import ImageHover from './image-hover'
 import Rating from './rating'
 import ProductPrice from './product-price'
+import { IProduct } from '@/types'
 // import { IProduct } from '@/types'
 
 const ProductCard = ({
@@ -15,7 +16,7 @@ const ProductCard = ({
   hideDetails = false,
   hideAddToCart = false
 }: {
-  product: Text
+  product: IProduct
   hideBorder?: boolean
   hideDetails?: boolean
   hideAddToCart?: boolean
@@ -25,18 +26,27 @@ const ProductCard = ({
       ? Math.round(((product.listPrice - product.price) / product.listPrice) * 100)
       : 0
 
+//       console.log("Product name:", product.name);
+// console.log("Product tags:", product.tags);
+
   return (
-    <Link
+    
+
+        
+      <Link
       href={`/product/${product.slug}`}
       className={cn(
-        'group block rounded-lg border hover:shadow-lg transition overflow-hidden bg-white',
+        'group block  hover:shadow-lg transition overflow-hidden bg-white',
         {
           'border-none': hideBorder
         }
       )}
     >
+      
       {/* Product Image with Hover Effect */}
       <div className="relative h-60 bg-white">
+    
+  
         {product.images.length > 1 ? (
           <ImageHover
             src={product.images[0]}
@@ -87,6 +97,7 @@ const ProductCard = ({
         </div>
       )}
     </Link>
+ 
   )
 }
 
