@@ -7,6 +7,7 @@ import CardItem from '@/components/shared/home/home-card'
 import ProductCard from '@/components/shared/product/product-card'
 import BestSelling from '@/components/shared/product/best-selingProducts'
 import RelatedProducts from '@/components/shared/product/related-products'
+import { Card, CardContent } from '@/components/ui/card'
 
 
 export default function HomePage ()  {
@@ -16,13 +17,17 @@ export default function HomePage ()  {
             <CardItem cards={data.featureSections}/>
             {/* <ProductCard product={data.todaysDeals}/> */}
             <div className='bg-white py-3'>
-            <h2 className='text-2xl font-bold px-8'>Today's Deals</h2>
+          <Card>
+            <CardContent>
+                <h2 className='text-2xl font-bold px-8'>Today's Deals</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2  p-4">
          
         {data.todaysDeals.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}
       </div>
+            </CardContent>
+          </Card>
           </div>
             <div className='bg-white'>
             <h2 className='text-2xl font-bold px-8'>Best Sellings</h2>
