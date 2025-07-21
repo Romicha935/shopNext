@@ -25,3 +25,15 @@ export interface IProduct {
   numReviews: number
   tags: string[]
 }
+
+// types/order.ts
+
+export interface OrderItem {
+  _id: string
+  name: string
+  slug: string
+  image: string
+  price: number
+  countInStock: number
+}
+

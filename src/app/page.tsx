@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import HomeLayout from './layout'
+// import HomeLayout from '../layout'
 import HomeCarousel from '@/components/shared/home/home-carousel'
 import { data } from '@/lib/data'
 import CardItem from '@/components/shared/home/home-card'

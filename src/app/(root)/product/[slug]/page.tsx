@@ -1,9 +1,13 @@
-"use client"
+
+// import AddToCart from '@/components/shared/product/add-to-cart'
+import AddToCart from '@/components/shared/product/add-to-cart'
 import ProductGallery from '@/components/shared/product/product-gallery'
 import ProductPrice from '@/components/shared/product/product-price'
+import ProductReview from '@/components/shared/product/product-review'
 import Rating from '@/components/shared/product/rating'
+import { Card, CardContent } from '@/components/ui/card'
 import { data } from '@/lib/data'
-import { getAllProducts } from '@/lib/utils'
+import { generateId, getAllProducts, round2 } from '@/lib/utils'
 // import { getTranslations } from 'next-intl/server'
 import React from 'react'
 
@@ -30,7 +34,7 @@ export default async function ProductDetailsPage  (props: {
                     {product.brand} {product.category}
                   </p>
                    <h1 className='text-lg lg:text-xl font-bold'>{product.name}</h1>
-                   <Rating avgRating={product.avgRating} numReviews={product.numReviews}   ratingDistribution={product.ratingDistribution} size={6} />
+                   <Rating avgRating={product.avgRating} numReviews={product.numReviews}    size={6} />
 
                    <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
                     <div className='flex gap-3'>
@@ -48,7 +52,52 @@ export default async function ProductDetailsPage  (props: {
               </p>
             </div>
             </div>
+
+            <Card>
+              <CardContent className='p-4 flex flex-col gap-4'>
+               <ProductPrice product={product.price}/>
+               <AddToCart product={product}/>
+               {/* {product.countInStock > 0 && product.countInStock <=3 && (
+                <div className='text-destructive font-bold'>
+                  count : {  product.countInStock}
+                </div>
+               )} */}
+
+               {/* {product.countInStock !== 0 ? (
+                <div>Product count is stock</div>
+               ) : (
+                <div>
+             Product out stock
+                </div>
+               )}
+
+               {product.countInStock !== 0 && (
+                <div className='flex justify-center items-center '>
+                  <AddToCart item={{
+                    clientId : generateId(),
+                    product:product._id,
+                    countInStock: product.countInStock,
+                    name:product.name,
+                    slug:product.slug,
+                    category: product.category,
+                    price: round2(product.price),
+                    quantity:1,
+                    images: product.images,
+                    color: product.colors[0]
+                  }}/>
+                </div>
+               )} */}
+              </CardContent>
+            </Card>
+
         </div>
+        <section>
+          <h1 className="text-2xl font-bold">Customers Review</h1>
+          <div className='flex gap-3 w-full'>
+           <Rating rating={product.rating} ratingDistribution={product.ratingDistribution}/>
+            <ProductReview reviews={product.reviews}/>
+          </div>
+        </section>
      
     </div>
   )
