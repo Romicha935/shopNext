@@ -5,6 +5,7 @@ import { Star } from "lucide-react"
 interface RatingProps {
   rating: number
   numReviews?: number
+  avgRating?: string,
   ratingDistribution?: {
     5?: number
     4?: number
@@ -18,6 +19,7 @@ interface RatingProps {
 export default function Rating({
   rating = 0,
   numReviews = 0,
+  // avgRating= "",
   ratingDistribution,
   size = 6,
 }: RatingProps) {

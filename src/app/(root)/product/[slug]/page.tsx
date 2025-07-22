@@ -140,17 +140,20 @@ export default async function ProductDetailsPage  (props: {
   return (
     <div>
        
-        <div className='grid grid-cols-1 md:grid-cols-5'>
-           <div className='col-span-2'>
+        <div className='grid  grid-cols-1 md:grid-cols-5'>
+           <div className=' col-span-2'>
+{Array.isArray(product.images) && product.images.length > 0 && (
   <ProductGallery images={product.images.filter(img => img && img.trim() !== '')} />
+)}
+
 </div>
 
             <div className='flex flex-col w-full gap-2 md:p-5 col-span-2'>
-                <div className='flex flex-col gap-2'>
-                  <p className='p-medium-16 rounded-full bg-gray-500/10 text-gray-500'>
+                <div className='flex flex-col pt-10 gap-2'>
+                  <p className='p-medium-16 items-center px-8 py-2 rounded-full bg-gray-500/10 text-gray-500'>
                     {product.brand} {product.category}
                   </p>
-                   <h1 className='text-lg lg:text-xl font-bold'>{product.name}</h1>
+                   <h1 className='text-lg lg:text-xl pt-10 font-bold'>{product.name}</h1>
                    <Rating rating={product.avgRating} numReviews={product.numReviews}    size={6} />
 
                    <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
