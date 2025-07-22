@@ -4,7 +4,17 @@ declare global {
   var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
 
-const uri = `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@cluster0.dvev3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
+const uri = process.env.MONGODB_URI;
+if (!uri) throw new Error('MONGODB_URI is not defined');
+if (!uri) {
+  throw new Error("Please define the MONGODB_URI environment variable");
+}
+
+// declare global {
+//   // eslint-disable-next-line no-var
+//   var _mongoClientPromise: Promise<MongoClient> | undefined;
+// }
 
 const client = new MongoClient(uri, {
   serverApi: {
