@@ -15,18 +15,18 @@ import { IProduct } from '@/types'
 const RelatedProducts = ({
   product,
   hideBorder = false,
-  hideDetails = false,
-  hideAddToCart = false
+  // hideDetails = false,
+  // hideAddToCart = false
 }: {
   product: IProduct
   hideBorder?: boolean
   hideDetails?: boolean
   hideAddToCart?: boolean
 }) => {
-  const percentage =
-    product.listPrice && product.listPrice > product.price
-      ? Math.round(((product.listPrice - product.price) / product.listPrice) * 100)
-      : 0
+  // const percentage =
+  //   product.listPrice && product.listPrice > product.price
+  //     ? Math.round(((product.listPrice - product.price) / product.listPrice) * 100)
+  //     : 0
 
 //       console.log("Product name:", product.name);
 // console.log("Product tags:", product.tags);
@@ -60,8 +60,10 @@ const RelatedProducts = ({
           />
         )}
         </Card>
+        
       </div>
 
+                
      
     </Link>
  

@@ -5,6 +5,7 @@ import settingReducer from './slices/settingSlice'
 export const store = configureStore({
   reducer: {
     setting: settingReducer,
+    cart: cartReducer, 
   },
 })
 

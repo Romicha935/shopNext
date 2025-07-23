@@ -14,7 +14,7 @@ const ProductCard = ({
   product,
   hideBorder = false,
   hideDetails = false,
-  hideAddToCart = false
+  // hideAddToCart = false
 }: {
   product: IProduct
   hideBorder?: boolean

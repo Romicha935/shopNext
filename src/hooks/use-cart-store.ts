@@ -186,16 +186,16 @@
 // use-cart-store.ts (উদাহরণ)
 import { useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from '@/redux/store'
-import { addItem as addItemAction } from '@/redux/slices/cartSlice'
+
+import { addToCart, CartItem } from '@/components/shared/product/cartSlice'
 
 export default function useCartStore() {
   const dispatch: AppDispatch = useDispatch()
   const cart = useSelector((state: RootState) => state.cart)
 
-  function addItem(item: any, quantity: number) {
-    dispatch(addItemAction({ item, quantity }))
+  function addItem(item: CartItem, quantity: number) {
+    dispatch(addToCart({ ...item, quantity }))
   }
 
   return { addItem, cart }
 }
-

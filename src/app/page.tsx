@@ -36,6 +36,7 @@ export default function HomePage ()  {
         {data.bestSellingProducts.slice(0,6).map((product) => (
           <BestSelling key={product.name} product={product} />
         ))}
+        
       </div>
           </div>
 

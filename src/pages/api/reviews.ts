@@ -14,6 +14,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 console.log('Fetched reviews:', reviews);
 
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch reviews' });
+    res.status(500).json({ error: 'Failed to fetch reviews',err });
   }
 }
