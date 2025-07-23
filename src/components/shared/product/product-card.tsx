@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Card } from '@/components/ui/card'
+//import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import ImageHover from './image-hover'
 import Rating from './rating'

@@ -110,7 +110,7 @@
 
 
 
-import AddToCart from '@/components/shared/product/add-to-cart'
+import AddToCart, { Product } from '@/components/shared/product/add-to-cart'
 // import AddToCart from '@/components/shared/product/add-to-cart'
 import ProductGallery from '@/components/shared/product/product-gallery'
 import ProductPrice from '@/components/shared/product/product-price'
@@ -175,38 +175,16 @@ export default async function ProductDetailsPage  (props: {
 
             <Card>
               <CardContent className='p-4 flex flex-col gap-4'>
-               <ProductPrice product={product.price}/>
-               <AddToCart product={product}/>
-               {/* {product.countInStock > 0 && product.countInStock <=3 && (
-                <div className='text-destructive font-bold'>
-                  count : {  product.countInStock}
-                </div>
-               )} */}
+               <ProductPrice
+  price={product.price}
+  listPrice={product.listPrice}
+  isDeal={product.tags.includes('todays-deal')}
+  forListing={false}
+/>
 
-               {/* {product.countInStock !== 0 ? (
-                <div>Product count is stock</div>
-               ) : (
-                <div>
-             Product out stock
-                </div>
-               )}
+               {product._id && <AddToCart product={product as Product} />}
 
-               {product.countInStock !== 0 && (
-                <div className='flex justify-center items-center '>
-                  <AddToCart item={{
-                    clientId : generateId(),
-                    product:product._id,
-                    countInStock: product.countInStock,
-                    name:product.name,
-                    slug:product.slug,
-                    category: product.category,
-                    price: round2(product.price),
-                    quantity:1,
-                    images: product.images,
-                    color: product.colors[0]
-                  }}/>
-                </div>
-               )} */}
+               
               </CardContent>
             </Card>
 

@@ -25,6 +25,8 @@ export type Review = {
   date: string;
 };
 
+
+
 // Product type
 export type ProductType = {
   _id?: string;

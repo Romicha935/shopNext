@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import ImageHover from './image-hover'
-import Rating from './rating'
-import ProductPrice from './product-price'
+// import Rating from './rating'
+// import ProductPrice from './product-price'
 import { IProduct } from '@/types'
 // import { IProduct } from '@/types'
 // import { IProduct } from '@/types'
@@ -44,7 +44,7 @@ const RelatedProducts = ({
       
       {/* Product Image with Hover Effect */}
       <div className="relative h-60 bg-white">
-    
+    <Card>
   
         {product.images.length > 1 ? (
           <ImageHover
@@ -59,6 +59,7 @@ const RelatedProducts = ({
             alt={product.name}
           />
         )}
+        </Card>
       </div>
 
      

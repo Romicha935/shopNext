@@ -13,14 +13,16 @@ const ImageHover = ({
 }) => {
 
     const [isHovered,setIsHovered] = useState(false)
-    let hoverTimeout: any
+     let hoverTimeout: NodeJS.Timeout | null = null
 
     const handleMouseEnter = () => {
         hoverTimeout = setTimeout(()=> setIsHovered(true),1000)
     }
 
     const handleMouseLeave = () => {
-        clearTimeout(hoverTimeout)
+         if (hoverTimeout !== null) {
+      clearTimeout(hoverTimeout)
+    }
         setIsHovered(false)
     }
   return (

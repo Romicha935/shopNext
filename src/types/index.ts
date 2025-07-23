@@ -14,6 +14,7 @@ export interface ClientSetting {
 }
 
 export interface IProduct {
+  _id: string         // এখানে যোগ করো
   name: string
   slug: string
   brand: string
@@ -24,16 +25,20 @@ export interface IProduct {
   avgRating: number
   numReviews: number
   tags: string[]
+  countInStock?: number  // Optional যদি না থাকে সব প্রোডাক্টে
 }
+
+
 
 // types/order.ts
 
-export interface OrderItem {
+export interface OrderItem extends Partial<IProduct> {
   _id: string
   name: string
   slug: string
-  image: string
+  image: string         // যদি একটার ছবি লাগে
   price: number
   countInStock: number
 }
+
 

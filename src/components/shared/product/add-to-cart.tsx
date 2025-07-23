@@ -7,18 +7,18 @@ import { Button } from "@/components/ui/button";
 import { addToCart } from "./cartSlice"; // তোমার সঠিক path দিতে হবে
 import { useRouter } from "next/navigation";
 
-// পণ্যের টাইপ (interface)
-interface Product {
-  _id: string;
-  name: string;
-  price: number;
-  countInStock: number;
-  images: string;
+import { IProduct } from '@/types'
+
+export interface CartProduct extends IProduct {
+  _id: string            // নিশ্চিত করো non-optional
+  countInStock: number   // non-optional
+  images: string[]       // থাকুক
 }
+
 
 // প্রপসের টাইপ
 interface Props {
-  product: Product;
+  product: IProduct;
 }
 
 const AddToCart: React.FC<Props> = ({ product }) => {
