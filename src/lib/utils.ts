@@ -42,7 +42,7 @@ export type ProductType = {
   avgRating: number;
   numReviews: number;
   ratingDistribution: Record<number, number>;
-  reviews: Review[];
+  //reviews: Review[];
   countInStock?: number;
   colors?: string[];
 };
@@ -75,7 +75,7 @@ export function getAllProducts(): ProductType[] {
       2: 0,
       1: 0,
     },
-    reviews: product.reviews || [],
+    //reviews: product.reviews || [],
     countInStock: product.countInStock ?? 0,
     colors: product.colors || [],
   }));

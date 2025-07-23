@@ -134,7 +134,7 @@ export default async function ProductDetailsPage  (props: {
         // const t = await getTranslations() 
         const params = await props.params
         const product = getAllProducts().find(p => p.slug === params.slug)
-          console.log('Reviews:', product?.reviews)
+          //console.log('Reviews:', product?.reviews)
 
         if(!product){
             return <div className='text-center text-red-500 py-10'>Product not found</div>
@@ -158,7 +158,7 @@ export default async function ProductDetailsPage  (props: {
                     {product.brand} {product.category}
                   </p>
                    <h1 className='text-lg lg:text-xl pt-10 font-bold'>{product.name}</h1>
-                   <Rating rating={product.avgRating} numReviews={product.numReviews}    size={6} />
+                   <Rating rating={product.avgRating} numReviews={product.numReviews}     />
 
                    <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
                     <div className='flex gap-3'>
@@ -196,10 +196,11 @@ export default async function ProductDetailsPage  (props: {
      
         <section className="w-full py-8">
   <ReviewsSection
-    rating={product.avgRating}
-    ratingDistribution={product.ratingDistribution}
-    reviews={product.reviews}
-  />
+  //reviews={product.reviews}
+  //rating={product.avgRating}
+  ///ratingDistribution={product.ratingDistribution}
+/>
+
 </section>
 
       
