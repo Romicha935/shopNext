@@ -19,7 +19,7 @@ export default function HomePage ()  {
             <div className='bg-white py-3'>
           <Card>
             <CardContent>
-                <h2 className='text-2xl font-bold px-8'>Today's Deals</h2>
+                <h2 className='text-2xl font-bold px-8'>{`Today's Deals`}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2  p-4">
          
         {data.todaysDeals.map((product) => (
@@ -49,9 +49,7 @@ export default function HomePage ()  {
       </div>
           </div>
           </div>
-  // <HomeLayout>
-  // <h1>home page</h1>
-  //     </HomeLayout>
+
         
 
   )
