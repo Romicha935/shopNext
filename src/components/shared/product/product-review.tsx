@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Rating from '@/components/shared/product/rating'
 
-type Review = {
+export type Review = {
   user: string;
   rating: number;
   comment: string;
@@ -37,7 +37,7 @@ export default function ReviewsSection() {
         <div className="w-full md:w-1/3 bg-gray-50 p-10  rounded shadow">
         <div className='w-full text-4xl'>
           
-          <Rating rating={rating}  ratingDistribution={ratingDistribution} />
+          <Rating rating={rating} numReviews={reviews.length} ratingDistribution={ratingDistribution} />
         </div>
         </div>
         <div className="w-full md:w-2/3 bg-white p-4 rounded shadow space-y-4">

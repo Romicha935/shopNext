@@ -23,10 +23,10 @@ const BestSelling = ({
   hideDetails?: boolean
   hideAddToCart?: boolean
 }) => {
-   const percentage =
-    product.listPrice && product.listPrice > product.price
-      ? Math.round(((product.listPrice - product.price) / product.listPrice) * 100)
-      : 0
+  //  const percentage =
+  //   product.listPrice && product.listPrice > product.price
+  //     ? Math.round(((product.listPrice - product.price) / product.listPrice) * 100)
+  //     : 0
 
 //       console.log("Product name:", product.name);
 // console.log("Product tags:", product.tags);
@@ -63,11 +63,11 @@ const BestSelling = ({
       </div>
 </Card>
        {/* Discount percentage badge */}
-          {percentage > 0 && (
+          {/* {percentage > 0 && (
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
               {percentage}% OFF
             </div>
-          )}
+          )} */}
     </Link>
  
   )

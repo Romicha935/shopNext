@@ -6,7 +6,7 @@ export type CartItem = {
    
   name: string
   price: number
-  images: string
+  images: string[]
   quantity: number
 }
 

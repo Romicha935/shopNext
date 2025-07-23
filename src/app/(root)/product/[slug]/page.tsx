@@ -110,23 +110,27 @@
 
 
 
-import AddToCart, { Product } from '@/components/shared/product/add-to-cart'
-// import AddToCart from '@/components/shared/product/add-to-cart'
+//import AddToCart, { Product } from '@/components/shared/product/add-to-cart'
+ import AddToCart from '@/components/shared/product/add-to-cart'
 import ProductGallery from '@/components/shared/product/product-gallery'
 import ProductPrice from '@/components/shared/product/product-price'
 import ReviewsSection from '@/components/shared/product/product-review'
-// import ProductReview from '@/components/shared/product/product-review'
 import Rating from '@/components/shared/product/rating'
+// import ProductReview from '@/components/shared/product/product-review'
+
 import { Card, CardContent } from '@/components/ui/card'
 // import { data } from '@/lib/data'
 import {  getAllProducts,  } from '@/lib/utils'
+import { IProduct } from '@/types'
 // import { getTranslations } from 'next-intl/server'
 import React from 'react'
 
 
+
+
 export default async function ProductDetailsPage  (props: {
     params: Promise <{slug: string}> }) {
-
+    
         // const t = await getTranslations() 
         const params = await props.params
         const product = getAllProducts().find(p => p.slug === params.slug)
@@ -182,7 +186,7 @@ export default async function ProductDetailsPage  (props: {
   forListing={false}
 />
 
-               {product._id && <AddToCart product={product as Product} />}
+               {product._id && <AddToCart product={product as IProduct} />}
 
                
               </CardContent>

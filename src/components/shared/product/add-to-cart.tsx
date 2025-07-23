@@ -4,10 +4,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { Button } from "@/components/ui/button";
-import { addToCart } from "./cartSlice"; // তোমার সঠিক path দিতে হবে
+
 import { useRouter } from "next/navigation";
 
 import { IProduct } from '@/types'
+import { addToCart } from "./cartSlice";
 
 export interface CartProduct extends IProduct {
   _id: string            // নিশ্চিত করো non-optional
