@@ -4,10 +4,11 @@ import React from 'react'
 import HomeCarousel from '@/components/shared/home/home-carousel'
 import { data } from '@/lib/data'
 import CardItem from '@/components/shared/home/home-card'
-import ProductCard from '@/components/shared/product/product-card'
-import BestSelling from '@/components/shared/product/best-selingProducts'
-import RelatedProducts from '@/components/shared/product/related-products'
-import { Card, CardContent } from '@/components/ui/card'
+// import ProductCard from '@/components/shared/product/product-card'
+// import BestSelling from '@/components/shared/product/best-selingProducts'
+// import RelatedProducts from '@/components/shared/product/related-products'
+// import { Card, CardContent } from '@/components/ui/card'
+import ProductCarousel from '@/components/shared/product/productSlider'
 
 
 export default function HomePage ()  {
@@ -15,8 +16,11 @@ export default function HomePage ()  {
           <div className='bg-gray-5'>
             <HomeCarousel  items={data.carousels}/>
             <CardItem cards={data.featureSections}/>
+             <ProductCarousel title="Today's Deals" products={data.todaysDeals} />
+      <ProductCarousel title="Best Sellings" products={data.bestSellingProducts} />
+      <ProductCarousel title="Related Products" products={data.relatedProducts} />
             {/* <ProductCard product={data.todaysDeals}/> */}
-            <div className='bg-white py-3'>
+            {/* <div className='bg-white py-3'>
           <Card>
             <CardContent>
                 <h2 className='text-2xl font-bold px-8'>{`Today's Deals`}</h2>
@@ -48,7 +52,7 @@ export default function HomePage ()  {
           <RelatedProducts key={product.name} product={product} />
         ))}
       </div>
-          </div>
+          </div> */}
           </div>
 
         

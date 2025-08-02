@@ -1,20 +1,20 @@
 // src/types/index.ts
 
 export interface SiteCurrency {
-  code: string       // যেমন: 'USD', 'BDT'
-  symbol: string     // যেমন: '$', '৳'
-  name: string       // যেমন: 'US Dollar', 'Bangladeshi Taka'
+  code: string       
+  symbol: string     
+  name: string       
 }
 
 export interface ClientSetting {
-  defaultCurrency: string            // ডিফল্ট কারেন্সি কোড
-  currency: string                   // বর্তমানে ব্যবহৃত কারেন্সি কোড
-  availableCurrencies: SiteCurrency[]  // সাপোর্টেড কারেন্সির লিস্ট
+  defaultCurrency: string            
+  currency: string                  
+  availableCurrencies: SiteCurrency[]
   
 }
 
 export interface IProduct {
-  _id: string         // এখানে যোগ করো
+  _id: string         
   name: string
   slug: string
   brand: string
@@ -25,7 +25,7 @@ export interface IProduct {
   avgRating: number
   numReviews: number
   tags: string[]
-  countInStock?: number  // Optional যদি না থাকে সব প্রোডাক্টে
+  countInStock?: number  
 }
 
 
@@ -36,7 +36,7 @@ export interface OrderItem extends Partial<IProduct> {
   _id: string
   name: string
   slug: string
-  image: string         // যদি একটার ছবি লাগে
+  image: string         
   price: number
   countInStock: number
 }

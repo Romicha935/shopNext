@@ -195,7 +195,7 @@ export default async function ProductDetailsPage  (props: {
         </div>
      
         <section className="w-full py-8">
-  <ReviewsSection
+  <ReviewsSection 
   //reviews={product.reviews}
   //rating={product.avgRating}
   ///ratingDistribution={product.ratingDistribution}
