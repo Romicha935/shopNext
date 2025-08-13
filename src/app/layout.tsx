@@ -10,6 +10,7 @@ import Footer from '@/components/footer'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import AuthProvider from '@/provider/Provider'
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -17,9 +18,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
        <Provider store={store}>
+        <AuthProvider>
         <Header/>
    {children}
-   <Footer/>
+      <Footer/>
+   </AuthProvider>
+
        </Provider>
        
         

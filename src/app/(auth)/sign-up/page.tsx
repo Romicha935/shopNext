@@ -1,3 +1,4 @@
+"use client"
 import { Card, CardContent } from '@/components/ui/card'
 import React from 'react'
 import SignUp from './signup'

@@ -1,33 +1,40 @@
 import React, { createContext, useState } from 'react'
 // import { AuthContext } from './Provider';
 import app from './../firebase/firebase.config';
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut}  from "firebase/auth"
-import { googleProvider } from '@/lib/firebase';
+import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut, User, UserCredential}  from "firebase/auth"
+
+
+
 type userType = {
     id:string
     name : string
     email :  string
 } | null
 
-type AuthContextType = {
-    user: userType
+export type AuthContextType = {
+     user: User | null
+    
     isLoading: boolean
+     createUser: (email: string, password: string) => Promise<UserCredential>;
+  signIn: (email: string, password: string) => Promise<UserCredential>;
+  googleSignIn: () => Promise<UserCredential>;
+  logOut: () => Promise<void>;
 } 
 
 export const AuthContext = createContext<AuthContextType| undefined > (undefined)
 const auth = getAuth(app)
-const Provider = ({children}) => {
+const AuthProvider = ({children}: { children: React.ReactNode }) => {
 
-    const [user,setUser] = useState(null)
+    const [user,setUser] = useState<User |null>(null)
     const [isLoading,setIsLoading] = useState(false)
-     const googleprovider = new GoogleAuthProvider()
+     const googleProvider = new GoogleAuthProvider()
 
-    const createUser = (email, password)=> {
+    const createUser = (email:string, password:string):Promise<UserCredential> => {
         setIsLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
-    const signIn = (email,password) => {
+    const signIn = (email:string,password:string) => {
         setIsLoading(true)
         return signInWithEmailAndPassword(auth, email,password)
     }
@@ -41,6 +48,15 @@ const Provider = ({children}) => {
         setIsLoading(false)
         return signOut(auth)
     }
+
+    // Firebase এ auth state চেক করা
+  React.useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser)
+      setIsLoading(false)
+    })
+    return () => unsubscribe()
+  }, [auth])
 
     const authInfo = {
         user,
@@ -57,4 +73,4 @@ const Provider = ({children}) => {
   )
 }
 
-export default Provider
+export default AuthProvider
