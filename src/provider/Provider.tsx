@@ -5,11 +5,11 @@ import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithE
 
 
 
-type userType = {
-    id:string
-    name : string
-    email :  string
-} | null
+// type userType = {
+//     id:string
+//     name : string
+//     email :  string
+// } | null
 
 export type AuthContextType = {
      user: User | null
