@@ -37,7 +37,7 @@ export const Menu = () => {
               className='flex items-center gap-2 header-button'
             >
               <UserIcon className='h-8 w-8' />
-              <span className='font-bold'>{user.email || user.name || "User"}</span>
+              <span className='font-bold'>{user.email ||  "User"}</span>
             </button>
 
             {dropDownOpen && (
