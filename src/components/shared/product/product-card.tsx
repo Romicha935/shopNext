@@ -88,11 +88,12 @@ const ProductCard = ({
               listPrice={product.listPrice}
               isDeal={product.tags.includes('todays-deal')}
             />
-            {percentage > 0 && (
-              <span className="text-xl rounded-lg bg-red-500 text-white px-2 py-1 font-medium">
-                {percentage}% OFF
-              </span>
-            )}
+           {percentage > 0 && product.tags.includes('todays-deal') && (
+  <span className="text-xl rounded-lg bg-red-500 text-white px-2 py-1 font-medium">
+    {percentage}% OFF
+  </span>
+)}
+
           </div>
         </div>
       )}

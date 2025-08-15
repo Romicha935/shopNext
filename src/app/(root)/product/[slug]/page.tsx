@@ -142,7 +142,7 @@ export default async function ProductDetailsPage  (props: {
         //const product = getAllProducts().find(p => p.slug === params.slug) as ProductType
 
   return (
-    <div>
+    <div className='px-10'>
        
         <div className='grid  grid-cols-1 md:grid-cols-5'>
            <div className=' col-span-2'>

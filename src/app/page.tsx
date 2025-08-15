@@ -13,11 +13,16 @@ import ProductCarousel from '@/components/shared/product/productSlider'
 
 export default function HomePage ()  {
   return (
-          <div className='bg-gray-5'>
+          <div className='bg-gray-5 px-8'>
             <HomeCarousel  items={data.carousels}/>
             <CardItem cards={data.featureSections}/>
-             <ProductCarousel title="Today's Deals" products={data.todaysDeals} />
-      <ProductCarousel title="Best Sellings" products={data.bestSellingProducts} />
+             <ProductCarousel  title="Today's Deals" products={data.todaysDeals} />
+      <ProductCarousel
+  title="Best Sellings"
+  products={data.bestSellingProducts}
+  hideDetails={true} // hide name, price, description
+/>
+
       <ProductCarousel title="Related Products" products={data.relatedProducts} />
             {/* <ProductCard product={data.todaysDeals}/> */}
             {/* <div className='bg-white py-3'>
