@@ -50,8 +50,8 @@ export type ProductType = {
 // Safe merging of product arrays with full type
 export function getAllProducts(): ProductType[] {
   const all = [
-    ...data.todaysDeals,
-    ...data.bestSellingProducts,
+    
+    // ...data.bestSellingProducts,
     ...data.relatedProducts,
   ];
 

@@ -18,6 +18,7 @@ export interface IProduct {
   name: string
   slug: string
   brand: string
+  category:string
   description: string
   images: string[]
   price: number
