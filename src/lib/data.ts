@@ -34,7 +34,7 @@ export const data = {
     },
     {
       name: 'Help',
-      href: '/pages/help',
+      href: '/help',
     },
   ],
    carousels: [

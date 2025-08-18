@@ -38,12 +38,12 @@ export default function AboutUsPage() {
       </div>
 
       {/* Contact Info Section */}
-      <div className="mt-16 bg-white shadow-lg rounded-lg p-10 text-center space-y-6">
+      {/* <div className="mt-16 bg-white shadow-lg rounded-lg p-10 text-center space-y-6">
         <h2 className="text-4xl font-bold text-gray-900">Contact Us</h2>
         <p className="text-gray-700">Email: support@shopnext.com</p>
         <p className="text-gray-700">Phone: +880 1234 567890</p>
         <p className="text-gray-700">Address: Rangpur, Bangladesh</p>
-      </div>
+      </div> */}
     </div>
   )
 }
