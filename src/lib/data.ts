@@ -30,11 +30,11 @@ export const data = {
     },
     {
       name: 'About Us',
-      href: '/page/about-us',
+      href: '/about-us',
     },
     {
       name: 'Help',
-      href: '/page/help',
+      href: '/pages/help',
     },
   ],
    carousels: [
