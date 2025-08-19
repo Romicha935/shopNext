@@ -2,13 +2,14 @@ import clientPromise from "@/lib/db"
 import { IProduct } from "@/types"
 import ProductCard from "@/components/product-card"
 
-export const dynamic = "force-dynamic" 
+export const dynamic = "force-dynamic" // live fetch
+
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams?: { tag?: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }) {
-  const tag = searchParams?.tag
+  const tag = searchParams?.tag as string | undefined
 
   const client = await clientPromise
   const db = client.db(process.env.MONGODB_DB ?? "nextShop")
