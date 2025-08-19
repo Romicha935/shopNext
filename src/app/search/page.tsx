@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 import clientPromise from "@/lib/db"
 import { IProduct } from "@/types"
 import ProductCard from "@/components/product-card"
