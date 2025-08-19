@@ -14,7 +14,7 @@ export const data = {
     
     {
       name: 'Featured Products',
-      href: '/search?tag=featured',
+      href: '/featured',
     },
     {
       name: 'Best Sellers',

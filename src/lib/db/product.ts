@@ -6,9 +6,8 @@ import { IProduct } from '@/types'
 export async function getTodaysDeals(): Promise<IProduct[]> {
   try {
     const client = await clientPromise
-    const db = client.db('nextShop') // তোমার DB name
+    const db = client.db('nextShop')
     
-    // collection: todays-deal
     const products = await db
       .collection<IProduct>('todays-deal')
       .find({})
@@ -16,18 +15,18 @@ export async function getTodaysDeals(): Promise<IProduct[]> {
 
     return products
   } catch (error) {
-    console.error('Error fetching Today\'s Deals:', error)
+    console.error("Error fetching Today's Deals:", error)
     return []
   }
 }
 
-// Optional: Future use - Best Selling Products fetch
+// Best Selling Products fetch
 export async function getBestSellingProducts(): Promise<IProduct[]> {
   try {
     const client = await clientPromise
     const db = client.db('nextShop')
     const products = await db
-      .collection<IProduct>('bestSeling')
+      .collection<IProduct>('bestSelling')
       .find({})
       .toArray()
     return products
@@ -37,14 +36,34 @@ export async function getBestSellingProducts(): Promise<IProduct[]> {
   }
 }
 
-// Optional: Generic fetch by tag
+// Featured Products fetch
+export async function getFeaturedProducts(): Promise<IProduct[]> {
+  try {
+    const client = await clientPromise
+    const db = client.db('nextShop')
+    
+    // tags array এর মধ্যে 'featured' আছে এমন products
+    const products = await db
+      .collection<IProduct>('featured-products')
+      .find({ tags: { $in: ['featured'] } })
+      .toArray()
+
+    return products
+  } catch (error) {
+    console.error('Error fetching Featured Products:', error)
+    return []
+  }
+}
+
+// Generic fetch by tag
 export async function getProductsByTag(tag: string): Promise<IProduct[]> {
   try {
     const client = await clientPromise
     const db = client.db('nextShop')
+    
     const products = await db
       .collection<IProduct>('products')
-      .find({ tags: tag })
+      .find({ tags: { $in: [tag] } })
       .toArray()
     return products
   } catch (error) {
