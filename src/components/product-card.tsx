@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { Card } from "./ui/card"
 
 type Props = {
   product: {
@@ -24,6 +25,7 @@ export default function ProductCard({ product }: Props) {
 
     
   return (
+    <Card>
     <div className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
       <Link href={`/product/${product.slug}`} className="block">
         <div className="relative w-full h-52">
@@ -51,5 +53,6 @@ export default function ProductCard({ product }: Props) {
         </div>
       </Link>
     </div>
+    </Card>
   )
 }
