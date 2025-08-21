@@ -1,8 +1,7 @@
-// components/Sidebar.tsx
 'use client';
 import Link from 'next/link';
 
-const categories = ['all', 'beauty', 'jewelry', 'saree', 'western'];
+const categories = ['all', 'beauty', 'jewelry', 'saree', 'fashion'];
 const prices = [
   { label: '$1 - $2000', min: 1, max: 2000 },
   { label: '$2001 - $5000', min: 2001, max: 5000 },
@@ -16,7 +15,7 @@ export default function Sidebar() {
       <ul className="space-y-1 mb-4">
         {categories.map((cat) => (
           <li key={cat}>
-            <Link href={`/products?category=${cat}&price=all`}>
+            <Link href={`/featured?category=${cat}&price=all`}>
               {cat.charAt(0).toUpperCase() + cat.slice(1)}
             </Link>
           </li>
@@ -27,7 +26,7 @@ export default function Sidebar() {
       <ul className="space-y-1">
         {prices.map((p) => (
           <li key={p.label}>
-            <Link href={`/products?category=all&price=${p.min}-${p.max}`}>
+            <Link href={`/featured?category=all&price=${p.min}-${p.max}`}>
               {p.label}
             </Link>
           </li>

@@ -303,6 +303,39 @@
 // // })
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [
   {
     
@@ -310,7 +343,7 @@
     "name":"Luxury Diamond Jewelry Set",
     "brand":"Elegancia",
     "description":"Elegant diamond necklace and earrings set.",
-    "images":["/images/diamond1.jpg","/images/diamond2.jpg"],
+    "images":["https://i.ibb.co.com/4RKnJN07/diamond1.jpg","https://i.ibb.co.com/4nf4s3tZ/diamond2.jpg"],
     "price":9600,
     "listPrice":12000,
     "avgRating":4.8,
@@ -328,7 +361,7 @@
     "name":"Traditional Gold-Plated Face Mask",
     "brand":"Nokshi Beauty",
     "description":"Luxurious gold-infused face mask set.",
-    "images":["/images/mask1.jpg","/images/mask2.jpg"],
+    "images":["https://i.ibb.co.com/zTWVmHJn/goldmaks1.jpg","https://i.ibb.co.com/vxY1SgB8/goldmaks2.jpg"],
     "price":2200,
     "listPrice":2800,
     "avgRating":4.4,
@@ -346,7 +379,7 @@
     "name":"Cosmetic Style Necklace Set",
     "brand":"FashionZone",
     "description":"Trendy costume necklace set.",
-    "images":["/images/necklace1.jpg","/images/necklace2.jpg"],
+    "images":["https://i.ibb.co.com/xt7dgvvk/cusmetic-nekles-1.jpg","https://i.ibb.co.com/gLGCKcFL/cusmetic-nekles-2.jpg"],
     "price":1299,
     "listPrice":1600,
     "avgRating":4.3,
@@ -364,7 +397,7 @@
     "name":"Diamond Glow Face Serum",
     "brand":"Shonar Bangla Beauty",
     "description":"Brightening serum with diamond-like shine.",
-    "images":["/images/serum1.jpg","/images/serum2.jpg"],
+    "images":["https://i.ibb.co.com/DNZS9ZH/diamond-serum-2.jpg","https://i.ibb.co.com/DNZS9ZH/diamond-serum-2.jpg"],
     "price":4500,
     "listPrice":5200,
     "avgRating":4.7,
@@ -382,7 +415,7 @@
     "name":"Colorful Bangles Set",
     "brand":"Shaadimela",
     "description":"All-in-one wedding bridal jewelry set.",
-    "images":["/images/bangles1.jpg","/images/bangles2.jpg"],
+    "images":["https://i.ibb.co.com/k2KxTBJd/bangleset-1.jpg","https://i.ibb.co.com/GQ6Q51TK/bangleset-2.jpg"],
     "price":8999,
     "listPrice":11000,
     "avgRating":4.9,
@@ -400,7 +433,7 @@
     "name":"Classic Pearl Skin Care Set",
     "brand":"PearlLuxe",
     "description":"Skincare combo with pearl essence.",
-    "images":["/images/pearlskin1.jpg","/images/pearlskin2.jpg"],
+    "images":["https://i.ibb.co.com/ymqf4KNY/skincare-set-1.jpg","https://i.ibb.co.com/35YPxFrq/skincare-set-2.jpg"],
     "price":3500,
     "listPrice":4200,
     "avgRating":4.6,
@@ -418,7 +451,7 @@
     "name":"Branded Banarasi Silk Saree",
     "brand":"Sundori Sarees",
     "description":"Premium Banarasi silk saree.",
-    "images":["/images/saree1.jpg","/images/saree2.jpg"],
+    "images":["https://i.ibb.co.com/qMDN7XC5/pure-banarasi-silk-sarees-1.jpg","https://i.ibb.co.com/cSjR2jwb/banarasi-saree-2.jpg"],
     "price":7225,
     "listPrice":8500,
     "avgRating":4.6,
@@ -436,7 +469,7 @@
     "name":"Designer Georgette Saree",
     "brand":"Ethnic Wear",
     "description":"Lightweight georgette saree with embroidery.",
-    "images":["/images/saree3.jpg","/images/saree4.jpg"],
+    "images":["https://i.ibb.co.com/nq9KMSpY/georgette-saree-1.jpg","https://i.ibb.co.com/G42mRVFg/georgette-saree-2.jpg"],
     "price":5500,
     "listPrice":7000,
     "avgRating":4.5,
@@ -454,7 +487,7 @@
     "name":"Chiffon Party Saree",
     "brand":"Glam Sarees",
     "description":"Elegant chiffon saree for evening parties.",
-    "images":["/images/saree5.jpg","/images/saree6.jpg"],
+    "images":["https://i.ibb.co.com/5X5gbbRp/sippon-saree-1.jpg","https://i.ibb.co.com/BHM5RYRK/ciffon-saree-2.jpg"],
     "price":4800,
     "listPrice":6000,
     "avgRating":4.4,
@@ -472,7 +505,7 @@
     "name":"Western Casual Dress",
     "brand":"StyleUp",
     "description":"Chic western wear dress with floral prints.",
-    "images":["/images/dress1.jpg","/images/dress2.jpg"],
+    "images":["https://i.ibb.co.com/MkwBhrb1/western-1.jpg","https://i.ibb.co.com/jPq8MV7d/western-2.jpg"],
     "price":1890,
     "listPrice":2400,
     "avgRating":4.5,
@@ -508,7 +541,7 @@
     "name":"Gold Plated Bracelet",
     "brand":"Shine Luxe",
     "description":"Trendy gold plated bracelet.",
-    "images":["/images/bracelet1.jpg","/images/bracelet2.jpg"],
+    "images":["https://i.ibb.co.com/hJRwf51J/gold-breslate-1.jpg","https://i.ibb.co.com/kVLBK7Ff/gold-breslate-2.jpg"],
     "price":899,
     "listPrice":1200,
     "avgRating":4.3,
@@ -526,7 +559,7 @@
     "name":"Organic Skincare Essentials",
     "brand":"Glow Naturals",
     "description":"Complete skincare combo.",
-    "images":["/images/skincare1.jpg","/images/skincare2.jpg"],
+    "images":["https://i.ibb.co.com/cKrWCmtX/organic-skincare-1.jpg","https://i.ibb.co.com/60Zr2VTc/organic-skincare-2.png"],
     "price":1450,
     "listPrice":1800,
     "avgRating":4.4,
@@ -544,7 +577,7 @@
     "name":"Western Party Gown",
     "brand":"GlamWear",
     "description":"Elegant western gown for parties.",
-    "images":["/images/gown1.jpg","/images/gown2.jpg"],
+    "images":["https://i.ibb.co.com/F43Krv5Q/western-party-gown-1.jpg","https://i.ibb.co.com/pjpPDnBm/western-party-gown-2.jpg"],
     "price":3200,
     "listPrice":4000,
     "avgRating":4.7,
@@ -562,7 +595,7 @@
     "name":"Elegant Pearl Necklace Set",
     "brand":"PearlLuxe",
     "description":"Classic pearl necklace and earrings set.",
-    "images":["/images/pearl1.jpg","/images/pearl2.jpg"],
+    "images":["https://i.ibb.co.com/YBC5JDnJ/nekless-1.jpg","https://i.ibb.co.com/S4Zqx1Sb/nekless-2.jpg"],
     "price":5600,
     "listPrice":7000,
     "avgRating":4.8,
@@ -580,7 +613,7 @@
     "name":"Designer Georgette Saree Premium",
     "brand":"SareeWorld",
     "description":"Premium georgette saree with embroidery.",
-    "images":["/images/saree7.jpg","/images/saree8.jpg"],
+    "images":["https://i.ibb.co.com/G42mRVFg/georgette-saree-2.jpg","https://i.ibb.co.com/nq9KMSpY/georgette-saree-1.jpg"],
     "price":6800,
     "listPrice":8000,
     "avgRating":4.6,
@@ -598,7 +631,7 @@
     "name":"Bridal Makeup Kit",
     "brand":"BeautyBox",
     "description":"Complete bridal makeup kit.",
-    "images":["/images/makeup1.jpg","/images/makeup2.jpg"],
+    "images":["https://i.ibb.co.com/B57DHHbm/bridal-mekup-1.jpg","https://i.ibb.co.com/8DB1m3RL/bridal-mekup-2-Copy.jpg"],
     "price":4500,
     "listPrice":5200,
     "avgRating":4.7,
@@ -616,7 +649,7 @@
     "name":"Ethnic Silk Saree",
     "brand":"Sundori Sarees",
     "description":"Premium ethnic silk saree.",
-    "images":["/images/saree9.jpg","/images/saree10.jpg"],
+    "images":["https://i.ibb.co.com/qLQr1ddW/enthik-silk-saree.jpg","https://i.ibb.co.com/ZRSW0G1k/enthik-silk-saree-2.jpg"],
     "price":7200,
     "listPrice":8500,
     "avgRating":4.6,
@@ -627,14 +660,13 @@
     "sizes":["Free"],
     "colors":["Red","Gold"],
     "countInStock":12
-},
-  {
+
     
     "slug":"summer-party-dress",
     "name":"Summer Party Dress",
     "brand":"Fashionista",
     "description":"Light summer dress for evening parties.",
-    "images":["/images/dress5.jpg","/images/dress6.jpg"],
+    "images":["https://i.ibb.co.com/YFvwkVsr/western-summer-1.jpg","https://i.ibb.co.com/d0YvykDy/westurn-summer-2.jpg"],
     "price":1900,
     "listPrice":2300,
     "avgRating":4.5,
@@ -652,7 +684,7 @@
     "name":"Classic Gold Earrings",
     "brand":"Shine Luxe",
     "description":"Elegant gold earrings for all occasions.",
-    "images":["/images/earrings1.jpg","/images/earrings2.jpg"],
+    "images":["https://i.ibb.co.com/21C6XKGH/earring-1-Copy.jpg","https://i.ibb.co.com/ym4f2vb8/earring-2-Copy.jpg"],
     "price":1200,
     "listPrice":1500,
     "avgRating":4.4,
@@ -664,97 +696,103 @@
     "colors":["Gold"],
     "countInStock":25
 },
-
-  {
-   
-    "slug": "diamond-jewelry-set",
-    "name": "Luxury Diamond Jewelry Set",
-    "brand": "Elegancia",
-    "description": "Elegant diamond necklace and earrings set with fine craftsmanship, perfect for weddings and celebrations.",
-    "images": ["/Images/todays-deal1.jpg", "/Images/todays-deal11.jpg"],
-    "price": 9600,
-    "listPrice": 12000,
-    "avgRating": 4.8,
-    "numReviews": 123,
-    "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
-    "category": "jewelry",
-    "tags": ["todays-deal"],
-    "sizes": ["Free"],
-    "colors": ["Silver"],
-    "countInStock": 10
-  },
-  {
-    
-    "slug": "banarasi-silk-saree",
-    "name": "Branded Banarasi Silk Saree",
-    "brand": "Sundori Sarees",
-    "description": "Premium Banarasi silk saree with golden zari work — a timeless ethnic fashion piece.",
-    "images": ["/Images/todays-deal2.jpeg", "/Images/today-deal22.jpeg"],
-    "price": 7225,
-    "listPrice": 8500,
-    "avgRating": 4.6,
-    "numReviews": 98,
-    "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
-    "category": "saree",
-    "tags": ["todays-deal"],
-    "sizes": ["Free"],
-    "colors": ["Red"],
-    "countInStock": 15
-  },
-  {
-    
-    "slug": "organic-skincare-pack",
-    "name": "Organic Skincare Essentials",
-    "brand": "Glow Naturals",
-    "description": "A complete skincare combo including face wash, toner, and night cream — made with organic ingredients.",
-    "images": ["/Images/todays-deal3.jpg", "/Images/today-deal32.jpeg"],
-    "price": 1450,
-    "listPrice": 1800,
-    "avgRating": 4.4,
-    "numReviews": 75,
-    "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
-    "category": "beauty",
-    "tags": ["todays-deal"],
-    "sizes": ["Standard"],
-    "colors": ["N/A"],
-    "countInStock": 25
-  },
-  {
-   
-    "slug": "gold-plated-bracelet",
-    "name": "Gold Plated Bracelet",
-    "brand": "Shine Luxe",
-    "description": "Trendy gold plated bracelet for women with modern design, perfect for everyday wear or gifting.",
-    "images": ["/Images/todays-deal4.jpg", "/Images/todays-deal-42.jpg"],
-    "price": 899,
-    "listPrice": 1200,
-    "avgRating": 4.3,
-    "numReviews": 64,
-    "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
-    "category": "jewelry",
-    "tags": ["todays-deal"],
-    "sizes": ["Free"],
-    "colors": ["Gold"],
-    "countInStock": 20
-  },
-  {
-    
-    "slug": "western-casual-dress",
-    "name": "Western Casual Dress",
-    "brand": "StyleUp",
-    "description": "Chic western wear dress with floral prints — comfortable and stylish for casual outings.",
-    "images": ["/Images/todays-deal5.jpg", "/Images/todays-deal-52.jpg"],
-    "price": 1890,
-    "listPrice": 2400,
-    "avgRating": 4.5,
-    "numReviews": 81,
-    "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
-    "category": "fashion",
-    "tags": ["todays-deal"],
-    "sizes": ["S", "M", "L"],
-    "colors": ["Blue"],
-    "countInStock": 18
-  }
 ]
 
+
+
+
+
+
+
+
+//  {
+   
+//     "slug": "diamond-jewelry-set",
+//     "name": "Luxury Diamond Jewelry Set",
+//     "brand": "Elegancia",
+//     "description": "Elegant diamond necklace and earrings set with fine craftsmanship, perfect for weddings and celebrations.",
+//     "images": ["/Images/todays-deal1.jpg", "/Images/todays-deal11.jpg"],
+//     "price": 9600,
+//     "listPrice": 12000,
+//     "avgRating": 4.8,
+//     "numReviews": 123,
+//     "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
+//     "category": "jewelry",
+//     "tags": ["todays-deal"],
+//     "sizes": ["Free"],
+//     "colors": ["Silver"],
+//     "countInStock": 10
+//   },
+//   {
+    
+//     "slug": "banarasi-silk-saree",
+//     "name": "Branded Banarasi Silk Saree",
+//     "brand": "Sundori Sarees",
+//     "description": "Premium Banarasi silk saree with golden zari work — a timeless ethnic fashion piece.",
+//     "images": ["/Images/todays-deal2.jpeg", "/Images/today-deal22.jpeg"],
+//     "price": 7225,
+//     "listPrice": 8500,
+//     "avgRating": 4.6,
+//     "numReviews": 98,
+//     "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
+//     "category": "saree",
+//     "tags": ["todays-deal"],
+//     "sizes": ["Free"],
+//     "colors": ["Red"],
+//     "countInStock": 15
+//   },
+//   {
+    
+//     "slug": "organic-skincare-pack",
+//     "name": "Organic Skincare Essentials",
+//     "brand": "Glow Naturals",
+//     "description": "A complete skincare combo including face wash, toner, and night cream — made with organic ingredients.",
+//     "images": ["/Images/todays-deal3.jpg", "/Images/today-deal32.jpeg"],
+//     "price": 1450,
+//     "listPrice": 1800,
+//     "avgRating": 4.4,
+//     "numReviews": 75,
+//     "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
+//     "category": "beauty",
+//     "tags": ["todays-deal"],
+//     "sizes": ["Standard"],
+//     "colors": ["N/A"],
+//     "countInStock": 25
+//   },
+//   {
+   
+//     "slug": "gold-plated-bracelet",
+//     "name": "Gold Plated Bracelet",
+//     "brand": "Shine Luxe",
+//     "description": "Trendy gold plated bracelet for women with modern design, perfect for everyday wear or gifting.",
+//     "images": ["/Images/todays-deal4.jpg", "/Images/todays-deal-42.jpg"],
+//     "price": 899,
+//     "listPrice": 1200,
+//     "avgRating": 4.3,
+//     "numReviews": 64,
+//     "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
+//     "category": "jewelry",
+//     "tags": ["todays-deal"],
+//     "sizes": ["Free"],
+//     "colors": ["Gold"],
+//     "countInStock": 20
+//   },
+//   {
+    
+//     "slug": "western-casual-dress",
+//     "name": "Western Casual Dress",
+//     "brand": "StyleUp",
+//     "description": "Chic western wear dress with floral prints — comfortable and stylish for casual outings.",
+//     "images": ["/Images/todays-deal5.jpg", "/Images/todays-deal-52.jpg"],
+//     "price": 1890,
+//     "listPrice": 2400,
+//     "avgRating": 4.5,
+//     "numReviews": 81,
+//     "ratingDistribution": { "5": 60, "4": 25, "3": 10, "2": 3, "1": 2 },
+//     "category": "fashion",
+//     "tags": ["todays-deal"],
+//     "sizes": ["S", "M", "L"],
+//     "colors": ["Blue"],
+//     "countInStock": 18
+//   }
 

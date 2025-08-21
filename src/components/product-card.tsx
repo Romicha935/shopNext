@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Card } from "./ui/card"
+import { Card, CardContent } from "./ui/card"
+import { Button } from "./ui/button"
 
 type Props = {
   product: {
@@ -26,6 +27,7 @@ export default function ProductCard({ product }: Props) {
     
   return (
     <Card>
+      <CardContent>
     <div className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
       <Link href={`/product/${product.slug}`} className="block">
         <div className="relative w-full h-52">
@@ -47,12 +49,19 @@ export default function ProductCard({ product }: Props) {
               <span className="text-sm line-through text-gray-400">${product.price}</span>
             )}
           </div>
-          <button className="mt-3 w-full bg-yellow-500 text-white py-2 rounded-xl hover:bg-yellow-600 cursor-pointer">
+        
+            <Button className="w-full">
+            
+          
+          {/* <button className="mt-3 w-full bg-yellow-500 text-white py-2 rounded-xl hover:bg-yellow-600 cursor-pointer"> */}
             Add to cart
-          </button>
+          {/* </button> */}
+          </Button>
+      
         </div>
       </Link>
     </div>
+    </CardContent>
     </Card>
   )
 }
