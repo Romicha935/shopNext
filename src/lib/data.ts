@@ -20,10 +20,7 @@ export const data = {
       name: 'Best Sellers',
       href: '/search?tag=best-seller',
     },
-    {
-      name: 'Browsing History',
-      href: '/#browsing-history',
-    },
+   
     {
       name: 'Customer Service',
       href: '/customer-service',
