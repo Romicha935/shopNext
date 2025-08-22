@@ -1,19 +1,21 @@
-
+// src/app/featured/page.tsx
 import clientPromise from "@/lib/db"
 import { IProduct } from "@/types"
 import ProductCard from "@/components/product-card"
 import { Filter } from "mongodb"
 import Sidebar from "@/components/sidebar/sidebar"
 
-export const dynamic = "force-dynamic" 
+export const dynamic = "force-dynamic" // live fetch
 
+// Next.js 15 compatible type
 interface FeaturePageProps {
-  searchParams?: { [key: string]: string | string[] | undefined }
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export default async function FeaturePage({ searchParams }: FeaturePageProps) {
-  const category = searchParams?.category as string | undefined
-  const price = searchParams?.price as string | undefined
+  const params = await searchParams   // 👈 Promise resolve করতে হবে
+  const category = params?.category as string | undefined
+  const price = params?.price as string | undefined
 
   const client = await clientPromise
   const db = client.db(process.env.MONGODB_DB ?? "nextShop")
