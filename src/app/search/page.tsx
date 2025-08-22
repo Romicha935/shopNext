@@ -4,12 +4,14 @@ import ProductCard from "@/components/product-card"
 
 export const dynamic = "force-dynamic" // live fetch
 
-export default async function SearchPage({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined }
-}) {
-  const tag = searchParams?.tag as string | undefined
+// Page props type Next.js 15 compliant
+interface SearchPageProps {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const params = await searchParams   // 👈 resolve Promise
+  const tag = params?.tag as string | undefined
 
   const client = await clientPromise
   const db = client.db(process.env.MONGODB_DB ?? "nextShop")

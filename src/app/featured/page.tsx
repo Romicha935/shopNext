@@ -1,27 +1,29 @@
-// src/app/featured/page.tsx
+// src/app/search/page.tsx
 import clientPromise from "@/lib/db"
 import { IProduct } from "@/types"
 import ProductCard from "@/components/product-card"
 import { Filter } from "mongodb"
 import Sidebar from "@/components/sidebar/sidebar"
 
-export const dynamic = "force-dynamic" // live fetch
+export const dynamic = "force-dynamic" 
 
-// Next.js 15 compatible type
-interface FeaturePageProps {
+
+interface SearchPageProps {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default async function FeaturePage({ searchParams }: FeaturePageProps) {
-  const params = await searchParams   // 👈 Promise resolve করতে হবে
+export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const params = await searchParams   
+  const q = params?.q as string | undefined
   const category = params?.category as string | undefined
   const price = params?.price as string | undefined
 
   const client = await clientPromise
   const db = client.db(process.env.MONGODB_DB ?? "nextShop")
 
-  const query: Filter<IProduct> = { tags: { $in: ["featured"] } }
+  const query: Filter<IProduct> = {}
 
+  if (q) query.name = { $regex: q, $options: "i" }
   if (category && category !== "all") query.category = category
   if (price && price !== "all") {
     const [min, max] = price.split("-").map(Number)
@@ -29,7 +31,7 @@ export default async function FeaturePage({ searchParams }: FeaturePageProps) {
   }
 
   const products = await db
-    .collection<IProduct>("featured-products")
+    .collection<IProduct>("products")
     .find(query)
     .toArray()
 
@@ -41,7 +43,7 @@ export default async function FeaturePage({ searchParams }: FeaturePageProps) {
 
         {/* Product Grid */}
         <div className="flex-1">
-          <h1 className="text-2xl font-bold mb-6">Featured Products</h1>
+          <h1 className="text-2xl font-bold mb-6">Search Results</h1>
 
           {products.length === 0 ? (
             <p className="text-gray-600">No products found.</p>
