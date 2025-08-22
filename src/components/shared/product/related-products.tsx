@@ -5,33 +5,22 @@ import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import ImageHover from './image-hover'
-// import Rating from './rating'
-// import ProductPrice from './product-price'
+
 import { IProduct } from '@/types'
-// import { IProduct } from '@/types'
-// import { IProduct } from '@/types'
-import Swiper from './../../../../node_modules/swiper/types/swiper-class.d';
-import ProductCarousel from './productSlider'
+
 
 
 const RelatedProducts = ({
   product,
   hideBorder = false,
-  // hideDetails = false,
-  // hideAddToCart = false
+  
 }: {
   product: IProduct
   hideBorder?: boolean
   hideDetails?: boolean
   hideAddToCart?: boolean
 }) => {
-  // const percentage =
-  //   product.listPrice && product.listPrice > product.price
-  //     ? Math.round(((product.listPrice - product.price) / product.listPrice) * 100)
-  //     : 0
 
-//       console.log("Product name:", product.name);
-// console.log("Product tags:", product.tags);
 
   return (
     
@@ -44,7 +33,7 @@ const RelatedProducts = ({
       )}
     >
       
-      {/* Product Image with Hover Effect */}
+      
      
     <Card>
      
@@ -75,7 +64,6 @@ const RelatedProducts = ({
         
         
       
-{/* <ProductCarousel title="Related Products" products={relatedProducts} hideDetails /> */}
 
                 
      

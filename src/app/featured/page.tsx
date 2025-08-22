@@ -1,18 +1,17 @@
-// src/app/featured/page.tsx
+
 import clientPromise from "@/lib/db"
 import { IProduct } from "@/types"
 import ProductCard from "@/components/product-card"
-
 import { Filter } from "mongodb"
 import Sidebar from "@/components/sidebar/sidebar"
 
-export const dynamic = "force-dynamic" // live fetch
+export const dynamic = "force-dynamic" 
 
-export default async function FeaturePage({
-  searchParams,
-}: {          
+interface FeaturePageProps {
   searchParams?: { [key: string]: string | string[] | undefined }
-}) {
+}
+
+export default async function FeaturePage({ searchParams }: FeaturePageProps) {
   const category = searchParams?.category as string | undefined
   const price = searchParams?.price as string | undefined
 
@@ -21,12 +20,11 @@ export default async function FeaturePage({
 
   const query: Filter<IProduct> = { tags: { $in: ["featured"] } }
 
-
-if (category && category !== "all") query.category = category
-if (price && price !== "all") {
-  const [min, max] = price.split("-").map(Number)
-  query.price = { $gte: min, $lte: max }
-}
+  if (category && category !== "all") query.category = category
+  if (price && price !== "all") {
+    const [min, max] = price.split("-").map(Number)
+    query.price = { $gte: min, $lte: max }
+  }
 
   const products = await db
     .collection<IProduct>("featured-products")
@@ -41,14 +39,12 @@ if (price && price !== "all") {
 
         {/* Product Grid */}
         <div className="flex-1">
-          <h1 className="text-2xl font-bold mb-6">
-            Featured Products
-          </h1>
+          <h1 className="text-2xl font-bold mb-6">Featured Products</h1>
 
           {products.length === 0 ? (
             <p className="text-gray-600">No products found.</p>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {products.map((p) => (
                 <ProductCard
                   key={p._id.toString()}

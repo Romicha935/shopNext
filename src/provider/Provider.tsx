@@ -49,14 +49,14 @@ const AuthProvider = ({children}: { children: React.ReactNode }) => {
         return signOut(auth)
     }
 
-    // Firebase এ auth state চেক করা
+   
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser)
       setIsLoading(false)
     })
     return () => unsubscribe()
-  }, [auth])
+  }, [])
 
     const authInfo = {
         user,
