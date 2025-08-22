@@ -56,7 +56,7 @@ const AuthProvider = ({children}: { children: React.ReactNode }) => {
       setIsLoading(false)
     })
     return () => unsubscribe()
-  }, [])
+  }, [auth])
 
     const authInfo = {
         user,
