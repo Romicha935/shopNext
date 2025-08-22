@@ -3,11 +3,11 @@ import clientPromise from '@/lib/db/mongodb'
 
 export async function GET(request: Request) {
   const url = new URL(request.url)
-  const tag = url.searchParams.get("tag") // ex: "todays-deal"
+  const tag = url.searchParams.get("tag") 
 
   try {
     const client = await clientPromise
-    const db = client.db("shopNext")
+    const db = client.db("nextShop")
     const collectionName = tag === "todays-deal" ? "todays-deal" : "products"
 
     const products = await db
