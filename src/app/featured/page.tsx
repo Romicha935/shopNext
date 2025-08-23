@@ -31,7 +31,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   }
 
   const products = await db
-    .collection<IProduct>("products")
+    .collection<IProduct>("featured-products")
     .find(query)
     .toArray()
 
@@ -56,6 +56,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     _id: p._id,
                     slug: p.slug,
                     title: p.name,
+                    description:p.description,
+                    rating:p.numReviews,
                     price: p.price,
                     dealPrice: p.listPrice < p.price ? p.listPrice : undefined,
                     image: p.images[0],

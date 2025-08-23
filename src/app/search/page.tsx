@@ -2,24 +2,29 @@ import clientPromise from "@/lib/db"
 import { IProduct } from "@/types"
 import ProductCard from "@/components/product-card"
 
-export const dynamic = "force-dynamic" // live fetch
+export const dynamic = "force-dynamic"
 
-// Page props type Next.js 15 compliant
 interface SearchPageProps {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const params = await searchParams   // 👈 resolve Promise
+  const params = await searchParams
   const tag = params?.tag as string | undefined
 
   const client = await clientPromise
   const db = client.db(process.env.MONGODB_DB ?? "nextShop")
 
-  const products = await db
-    .collection<IProduct>("todays-deal")
-    .find(tag ? { tags: tag } : {})
-    .toArray()
+  let products: IProduct[] = []
+
+  const collections = ["featured-products", "todays-deal", "best-selling"]
+  for (const col of collections) {
+    const found = await db
+      .collection<IProduct>(col)
+      .find(tag ? { tags: tag } : {})
+      .toArray()
+    products = [...products, ...found]
+  }
 
   return (
     <main className="min-h-screen bg-gray-100 py-6">

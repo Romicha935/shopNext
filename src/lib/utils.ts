@@ -1,13 +1,14 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { data } from "./data";
+//import clientPromise from "./db"; // MongoDB client
 
-// Utility: Combine Tailwind + custom classes
+// ✅ Utility: Combine Tailwind + custom classes
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Utility: Format currency
+// ✅ Utility: Format currency
 export function formatCurrency(amount: number, currency: string = "USD"): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -17,17 +18,15 @@ export function formatCurrency(amount: number, currency: string = "USD"): string
   }).format(amount);
 }
 
-// Review type
+// ✅ Review type
 export type Review = {
   user: string;
   rating: number;
   comment: string;
   date: string;
-};
+}
 
-
-
-// Product type
+// ✅ Product type
 export type ProductType = {
   _id?: string;
   slug: string;
@@ -42,49 +41,47 @@ export type ProductType = {
   avgRating: number;
   numReviews: number;
   ratingDistribution: Record<number, number>;
-  //reviews: Review[];
+  // reviews?: Review[];
   countInStock?: number;
   colors?: string[];
-};
+}
 
-// Safe merging of product arrays with full type
-export function getAllProducts(): ProductType[] {
-  const all = [
-    
-    // ...data.bestSellingProducts,
-    ...data.relatedProducts,
+// ✅ Async merging of data.ts + MongoDB collections
+export async function getAllProducts(): Promise<ProductType[]> {
+  // const client = await clientPromise;
+  
+
+  
+
+  const all: ProductType[] = [
+    ...data.relatedProducts, // data.ts
+   
   ];
 
-  return all.map((product) => ({
-    _id: product._id || "",
-    slug: product.slug,
-    name: product.name,
-    brand: product.brand,
-    category: product.category,
-    description: product.description || "",
-    price: product.price,
-    listPrice: product.listPrice,
-    tags: product.tags || [],
-    images: product.images || [],
-    avgRating: product.avgRating || 0,
-    numReviews: product.numReviews || 0,
-    ratingDistribution: product.ratingDistribution || {
-      5: 0,
-      4: 0,
-      3: 0,
-      2: 0,
-      1: 0,
-    },
-    //reviews: product.reviews || [],
-    countInStock: product.countInStock ?? 0,
-    colors: product.colors || [],
+  return all.map(p => ({
+    _id: p._id?.toString() || "",
+    slug: p.slug,
+    name: p.name,
+    brand: p.brand,
+    category: p.category,
+    description: p.description || "",
+    price: p.price,
+    listPrice: p.listPrice,
+    tags: p.tags || [],
+    images: p.images || [],
+    avgRating: p.avgRating || 0,
+    numReviews: p.numReviews || 0,
+    ratingDistribution: p.ratingDistribution || {5:0,4:0,3:0,2:0,1:0},
+    // reviews: p.reviews || [],
+    countInStock: p.countInStock ?? 0,
+    colors: p.colors || [],
   }));
 }
 
-// Round number to 2 decimal places
+// ✅ Round number to 2 decimal places
 export const round2 = (num: number) =>
   Math.round((num + Number.EPSILON) * 100) / 100;
 
-// Generate random 24-digit ID (like MongoDB _id)
+// ✅ Generate random 24-digit ID (like MongoDB _id)
 export const generateId = () =>
   Array.from({ length: 24 }, () => Math.floor(Math.random() * 10)).join("");

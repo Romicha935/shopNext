@@ -61,13 +61,7 @@ const RelatedProducts = ({
     </div>
 
         </Card>
-        
-        
-      
-
-                
-     
-    </Link>
+        </Link>
  
   )
 }
