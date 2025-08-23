@@ -59,6 +59,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     description:p.description,
                     rating:p.numReviews,
                     price: p.price,
+                    listPrice:p.listPrice,
                     dealPrice: p.listPrice < p.price ? p.listPrice : undefined,
                     image: p.images[0],
                     category: p.brand,

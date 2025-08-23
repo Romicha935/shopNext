@@ -48,7 +48,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 py-6 text-center text-sm space-y-2">
           <div className="flex justify-center items-center gap-3">
             <Image
-              src="/icons/logo.svg"
+              src="/logoo.png"
               alt="Logo"
               width={40}
               height={40}

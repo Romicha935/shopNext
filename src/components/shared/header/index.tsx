@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import logo from '../../../../public/logo.png'
+
 import { Search } from './search'
 import { Menu } from './menu'
 import { Button } from '@/components/ui/button'
@@ -17,7 +17,7 @@ export const Header = () => {
             <div className='flex items-center'>
                 <Link href='/' className='flex items-center header-button font-extrabold text-2xl m-1'>
 
-                <Image src={logo} height={40} width={40} alt={`logo`} />
+                <Image src="/logoo.png" height={40} width={40} alt={`logo`} />
                 ShopNext
                 </Link>
             </div>

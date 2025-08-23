@@ -345,7 +345,7 @@
 //     "description":"Elegant diamond necklace and earrings set.",
 //     "images":["/feacured/diamond1.jpg","/feacured/diamond2.jpg"],
 //     "price":9600,
-//     "listPrice":12000,
+     
 //     "avgRating":4.8,
 //     "numReviews":123,
 //     "ratingDistribution":{"5":90,"4":20,"3":10,"2":2,"1":1},
@@ -363,7 +363,7 @@
 //     "description":"Luxurious gold-infused face mask set.",
 //     "images":["/feacured/goldmaks1.jpg","/feacured/goldmaks2.jpg"],
 //     "price":2200,
-//     "listPrice":2800,
+
 //     "avgRating":4.4,
 //     "numReviews":75,
 //     "ratingDistribution":{"5":40,"4":20,"3":10,"2":3,"1":2},
@@ -399,7 +399,7 @@
 //     "description":"Brightening serum with diamond-like shine.",
 //     "images":["/feacured/diamond-serum-1.png","/feacured/diamond-serum-2.jpg"],
 //     "price":4500,
-//     "listPrice":5200,
+   
 //     "avgRating":4.7,
 //     "numReviews":65,
 //     "ratingDistribution":{"5":45,"4":15,"3":3,"2":1,"1":1},
@@ -453,7 +453,7 @@
 //     "description":"Premium Banarasi silk saree.",
 //     "images":["/feacured/pure-banarasi-silk-sarees-1.jpg","/feacured/banarasi-saree-2.jpg"],
 //     "price":7225,
-//     "listPrice":8500,
+    
 //     "avgRating":4.6,
 //     "numReviews":98,
 //     "ratingDistribution":{"5":70,"4":20,"3":5,"2":2,"1":1},
@@ -489,7 +489,7 @@
 //     "description":"Elegant chiffon saree for evening parties.",
 //     "images":["/feacured/sippon-saree-1.jpg","/feacured/ciffon-saree-2.jpg"],
 //     "price":4800,
-//     "listPrice":6000,
+    
 //     "avgRating":4.4,
 //     "numReviews":60,
 //     "ratingDistribution":{"5":40,"4":15,"3":3,"2":1,"1":1},
@@ -507,7 +507,7 @@
 //     "description":"Chic western wear dress with floral prints.",
 //     "images":["/feacured/western-1.jpg","/feacured/western-2.jpg"],
 //     "price":1890,
-//     "listPrice":2400,
+  
 //     "avgRating":4.5,
 //     "numReviews":81,
 //     "ratingDistribution":{"5":50,"4":20,"3":8,"2":2,"1":1},
@@ -525,7 +525,7 @@
 //     "description":"Light summer dress with vibrant floral design.",
 //     "images":["/feacured/western-summer-1.jpg","/feacured/westurn-summer-2.jpg"],
 //     "price":1700,
-//     "listPrice":2100,
+   
 //     "avgRating":4.4,
 //     "numReviews":65,
 //     "ratingDistribution":{"5":40,"4":15,"3":5,"2":3,"1":2},
@@ -543,7 +543,7 @@
 //     "description":"Trendy gold plated bracelet.",
 //     "images":["/feacured/gold-breslate-1.jpg","/feacured/gold-breslate-2.jpg"],
 //     "price":899,
-//     "listPrice":1200,
+   
 //     "avgRating":4.3,
 //     "numReviews":64,
 //     "ratingDistribution":{"5":40,"4":15,"3":5,"2":2,"1":2},
@@ -579,7 +579,7 @@
 //     "description":"Elegant western gown for parties.",
 //     "images":["/feacured/western-party-gown-1.jpg","c/feacured/western-party-gown-2.jpg"],
 //     "price":3200,
-//     "listPrice":4000,
+   
 //     "avgRating":4.7,
 //     "numReviews":80,
 //     "ratingDistribution":{"5":60,"4":15,"3":3,"2":1,"1":1},
@@ -597,7 +597,7 @@
 //     "description":"Classic pearl necklace and earrings set.",
 //     "images":["/feacured/nekless-1.jpg","/feacured/nekless-2.jpg"],
 //     "price":5600,
-//     "listPrice":7000,
+    
 //     "avgRating":4.8,
 //     "numReviews":95,
 //     "ratingDistribution":{"5":70,"4":15,"3":5,"2":3,"1":2},
@@ -651,7 +651,7 @@
 //     "description":"Premium ethnic silk saree.",
 //     "images":["/feacured/enthik-silk-saree.jpeg","/feacured/enthik-silk-saree-2.jpg"],
 //     "price":7200,
-//     "listPrice":8500,
+  
 //     "avgRating":4.6,
 //     "numReviews":90,
 //     "ratingDistribution":{"5":70,"4":15,"3":5,"2":0,"1":0},
@@ -687,7 +687,7 @@
 //     "description":"Elegant gold earrings for all occasions.",
 //     "images":["/feacured/earring-1.jpg","/feacured/earring-2.jpg"],
 //     "price":1200,
-//     "listPrice":1500,
+   
 //     "avgRating":4.4,
 //     "numReviews":50,
 //     "ratingDistribution":{"5":30,"4":15,"3":3,"2":1,"1":1},

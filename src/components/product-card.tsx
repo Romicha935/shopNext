@@ -10,6 +10,7 @@ type Props = {
     title: string
     description?: string
     price: number
+    listPrice:number
     dealPrice?: number
     image: string
     category?: string
@@ -19,11 +20,12 @@ type Props = {
 }
 
 export default function ProductCard({ product }: Props) {
-  const finalPrice = product.dealPrice ?? product.price
-  const hasDeal = product.dealPrice && product.dealPrice < product.price
-  const discount = hasDeal
-    ? Math.round(((product.price - product.dealPrice!) / product.price) * 100)
-    : 0
+  //const finalPrice = product.dealPrice ?? product.price
+  const hasDeal = product.listPrice && product.listPrice > product.price
+const discount = hasDeal
+  ? Math.round(((product.listPrice - product.price) / product.listPrice) * 100)
+  : 0
+
 
   return (
     <Card>
@@ -55,16 +57,17 @@ export default function ProductCard({ product }: Props) {
 
             
 
-              {/* Price */}
-              <div className="mt-3 flex items-center gap-2">
-                <span className="text-lg font-bold">${finalPrice}</span>
-                {hasDeal && (
-                  <>
-                    <span className="text-sm line-through text-gray-400">List Price : ${product.price}</span>
-                    <span className="text-sm text-green-600 font-bold">-{discount}%</span>
-                  </>
-                )}
-              </div>
+               {/* Price */}
+        <div className="mt-2 flex items-center gap-2">
+       <span className="text-lg font-bold">${product.price}</span>
+        {hasDeal && (
+          <>
+           <span className="text-sm line-through text-gray-400">${product.listPrice}</span>
+           <span className="text-sm text-green-600 font-bold">-{discount}%</span>
+        </>
+  )}
+</div>
+
 
               <Button className="w-full mt-3">Add to Cart</Button>
             </div>

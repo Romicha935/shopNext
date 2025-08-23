@@ -1,8 +1,8 @@
-// src/lib/db/products.ts
+
 import clientPromise from './mongodb'
 import { IProduct } from '@/types'
 
-// Today's Deals fetch
+
 export async function getTodaysDeals(): Promise<IProduct[]> {
   try {
     const client = await clientPromise
@@ -20,7 +20,7 @@ export async function getTodaysDeals(): Promise<IProduct[]> {
   }
 }
 
-// Best Selling Products fetch
+
 export async function getBestSellingProducts(): Promise<IProduct[]> {
   try {
     const client = await clientPromise
@@ -36,13 +36,13 @@ export async function getBestSellingProducts(): Promise<IProduct[]> {
   }
 }
 
-// Featured Products fetch
+
 export async function getFeaturedProducts(): Promise<IProduct[]> {
   try {
     const client = await clientPromise
     const db = client.db('nextShop')
     
-    // tags array এর মধ্যে 'featured' আছে এমন products
+ 
     const products = await db
       .collection<IProduct>('featured-products')
       .find({ tags: { $in: ['featured'] } })
