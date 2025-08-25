@@ -10,10 +10,11 @@ interface SearchParams {
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams?: SearchParams;
+  searchParams?: Promise<SearchParams>; // 👈 এখানে Promise<SearchParams>
 }) {
-  const query = searchParams?.q?.toLowerCase() || "";
-  const category = searchParams?.category || "all";
+  const params = await searchParams; // 👈 await করতে হবে
+  const query = params?.q?.toLowerCase() || "";
+  const category = params?.category || "all";
 
   const allProducts = await getAllProducts();
 
@@ -48,6 +49,8 @@ export default async function SearchPage({
               <Image
                 src={product.images?.[0] || "/no-image.png"}
                 alt={product.name || "No Name"}
+                width={300}
+                height={200}
                 className="h-32 w-full object-cover mb-2"
               />
               <h2 className="font-semibold">{product.name}</h2>
