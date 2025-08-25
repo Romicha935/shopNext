@@ -1,59 +1,55 @@
-import clientPromise from "@/lib/db"
-import { IProduct } from "@/types"
-import ProductCard from "@/components/product-card"
 
-export const dynamic = "force-dynamic"
+import { getAllProducts } from "@/lib/utils.server";
+import Link from "next/link";
 
-interface SearchPageProps {
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
-}
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams: { q?: string; category?: string };
+}) {
+  const query = searchParams.q?.toLowerCase() || "";
+  const category = searchParams.category || "all";
 
-export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const params = await searchParams
-  const tag = params?.tag as string | undefined
+  const allProducts = await getAllProducts();
 
-  const client = await clientPromise
-  const db = client.db(process.env.MONGODB_DB ?? "nextShop")
+  const filteredProducts = allProducts.filter((p) => {
+    const productName = p.name?.toLowerCase() || "";
+    const productCategory = p.category?.toLowerCase() || "";
 
-  let products: IProduct[] = []
+    const matchQuery = productName.includes(query);
+    const matchCategory = category === "all" || productCategory === category.toLowerCase();
 
-  const collections = ["featured-products", "todays-deal", "best-selling"]
-  for (const col of collections) {
-    const found = await db
-      .collection<IProduct>(col)
-      .find(tag ? { tags: tag } : {})
-      .toArray()
-    products = [...products, ...found]
-  }
+    return matchQuery && matchCategory;
+  });
 
   return (
-    <main className="min-h-screen bg-gray-100 py-6">
-      <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-2xl font-bold mb-6">
-          {tag ? `Products tagged: "${tag}"` : "All Products"}
-        </h1>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Search Results</h1>
+      <p className="mb-4">
+        Showing results for: <b>{query || "All"}</b> in <b>{category}</b>
+      </p>
 
-        {products.length === 0 ? (
-          <p className="text-gray-600">No products found.</p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {products.map((p) => (
-              <ProductCard
-                key={p._id.toString()}
-                product={{
-                  _id: p._id,
-                  slug: p.slug,
-                  title: p.name,
-                  price: p.price,
-                  dealPrice: p.listPrice < p.price ? p.listPrice : undefined,
-                  image: p.images[0],
-                  category: p.brand,
-                }}
+      {filteredProducts.length === 0 ? (
+        <p className="text-red-500">❌ No products found.</p>
+      ) : (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {filteredProducts.map((product) => (
+            <Link
+              key={product._id}
+              href={`/product/${product.slug}`}
+              className="border rounded p-3 hover:shadow-lg"
+            >
+              <img
+                src={product.images?.[0] || "/no-image.png"}
+                alt={product.name || "No Name"}
+                className="h-32 w-full object-cover mb-2"
               />
-            ))}
-          </div>
-        )}
-      </div>
-    </main>
-  )
+              <h2 className="font-semibold">{product.name}</h2>
+              <p className="text-gray-600">${product.price}</p>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }

@@ -1,34 +1,52 @@
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { SearchIcon } from 'lucide-react'
-import React from 'react'
+"use client";
+
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from "@/components/ui/select";
+import { SearchIcon } from "lucide-react";
 
 export const Search = () => {
   return (
-    <form action="/search" method='GET' className='flex items-stretch h-10'>
-        {/* select dropdowm for category */}
-       <Select name='category'>
-        <SelectTrigger className='w-auto h-full dark:border-gray-200 bg-gray-100 text-black border-r rounded-r-none rounded-l-md rtl:rounded-r-md rtl:rounded-l-none'>
-            <SelectValue placeholder='All' className=''/>
+    <form
+      action="/search"
+      method="GET"
+      className="flex items-center w-full max-w-lg rounded-md"
+    >
+      {/* Category Dropdown */}
+      <Select name="category">
+        <SelectTrigger className="flex h-9 cursor-pointer  text-black border border-r-gray-300 rounded-none bg-white">
+          <SelectValue placeholder="All" />
         </SelectTrigger>
         <SelectContent>
-            <SelectItem value='all' >All</SelectItem>
-            {/* {categories.map((category)=>(
-                <SelectItem key={category} value={category}>
-                    {category}
-                </SelectItem>
-            ))} */}
+          <SelectItem value="all">All</SelectItem>
+          <SelectItem value="beauty">Beauty</SelectItem>
+          <SelectItem value="jewellery">Jewellery</SelectItem>
+          <SelectItem value="saree">Saree</SelectItem>
+          <SelectItem value="fashion">Fashion</SelectItem>
         </SelectContent>
-       </Select>
-    
-       {/* search input */}
-       <Input className='flex-1 rounded-none dark:border-gray-200  bg-gray-100 text-black text-base h-9  ' placeholder={`search $`} name='q' type='search' />
+      </Select>
 
-       {/* button */}
-       <Button type='submit' className='bg-primary text-primary-foreground text-black rounded-s-none rounded-e-md h-full px-3 py-2'>
-       <SearchIcon className='w-6 h-6'/>
-       </Button>
+      {/* Search Input */}
+      <Input
+        name="q"
+        type="search"
+        placeholder="Search products..."
+        className="flex-1 h-9 px-3 text-black border border-r-gray-300 rounded-none bg-white"
+      />
+
+      {/* Search Button */}
+      <Button
+        type="submit"
+        className="h-9 px-4 bg-white border cursor-pointer hover:bg-white border-r-gray-300 rounded-none  flex items-center justify-center"
+      >
+        <SearchIcon className="w-5 h-5 text-black" />
+      </Button>
     </form>
-  )
-}
+  );
+};

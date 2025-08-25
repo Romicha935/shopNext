@@ -5,11 +5,9 @@ import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import ImageHover from './image-hover'
-// import Rating from './rating'
-// import ProductPrice from './product-price'
+
 import { IProduct } from '@/types'
-// import { IProduct } from '@/types'
-// import { IProduct } from '@/types'
+
 
 
 const BestSelling = ({

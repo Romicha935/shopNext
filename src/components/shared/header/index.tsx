@@ -21,7 +21,7 @@ export const Header = () => {
                 ShopNext
                 </Link>
             </div>
-            <div>
+            <div className='hidden md:block'>
                 <Search/>
             </div>
             <Menu/>

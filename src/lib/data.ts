@@ -9,7 +9,7 @@ export const data = {
    headerMenus: [
     {
       name: "Today's Deal",
-      href: '/search?tag=todays-deal',
+      href: '/todays-deal',
     },
     
     {

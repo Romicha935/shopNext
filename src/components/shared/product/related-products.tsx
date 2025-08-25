@@ -56,7 +56,7 @@ const RelatedProducts = ({
       <h2 className="font-bold text-lg">{product.name}</h2>
       <h3 className="text-sm line-clamp-2 font-semibold text-gray-600">{product.description}</h3>
       {/* <p>⭐{product.avgRating}</p> */}
-      <p>⭐⭐⭐⭐({product.numReviews})</p>
+      <p>⭐⭐⭐⭐ ({product.numReviews})</p>
       <p className='text-2xl text-center'>${product.price}</p>
     </div>
 
