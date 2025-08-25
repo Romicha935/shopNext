@@ -1,14 +1,19 @@
-
 import { getAllProducts } from "@/lib/utils.server";
+import Image from "next/image";
 import Link from "next/link";
+
+interface SearchParams {
+  q?: string;
+  category?: string;
+}
 
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: { q?: string; category?: string };
+  searchParams?: SearchParams;
 }) {
-  const query = searchParams.q?.toLowerCase() || "";
-  const category = searchParams.category || "all";
+  const query = searchParams?.q?.toLowerCase() || "";
+  const category = searchParams?.category || "all";
 
   const allProducts = await getAllProducts();
 
@@ -16,8 +21,9 @@ export default async function SearchPage({
     const productName = p.name?.toLowerCase() || "";
     const productCategory = p.category?.toLowerCase() || "";
 
-    const matchQuery = productName.includes(query);
-    const matchCategory = category === "all" || productCategory === category.toLowerCase();
+    const matchQuery = query ? productName.includes(query) : true;
+    const matchCategory =
+      category === "all" || productCategory === category.toLowerCase();
 
     return matchQuery && matchCategory;
   });
@@ -37,9 +43,9 @@ export default async function SearchPage({
             <Link
               key={product._id}
               href={`/product/${product.slug}`}
-              className="border rounded p-3 hover:shadow-lg"
+              className="border rounded p-3 hover:shadow-lg bg-white"
             >
-              <img
+              <Image
                 src={product.images?.[0] || "/no-image.png"}
                 alt={product.name || "No Name"}
                 className="h-32 w-full object-cover mb-2"
