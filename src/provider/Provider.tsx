@@ -29,25 +29,30 @@ const AuthProvider = ({children}: { children: React.ReactNode }) => {
     const [isLoading,setIsLoading] = useState(false)
      const googleProvider = new GoogleAuthProvider()
 
-    const createUser = (email:string, password:string):Promise<UserCredential> => {
-        setIsLoading(true)
-        return createUserWithEmailAndPassword(auth,email,password)
-    }
+    const createUser = (email: string, password: string) => {
+  setIsLoading(true);
+  return createUserWithEmailAndPassword(auth, email, password)
+    .finally(() => setIsLoading(false));
+};
 
-    const signIn = (email:string,password:string) => {
-        setIsLoading(true)
-        return signInWithEmailAndPassword(auth, email,password)
-    }
+const signIn = (email: string, password: string) => {
+  setIsLoading(true);
+  return signInWithEmailAndPassword(auth, email, password)
+    .finally(() => setIsLoading(false));
+};
 
-    const googleSignIn = () => {
-        setIsLoading(true)
-        return signInWithPopup(auth,googleProvider)
-    }
+const googleSignIn = () => {
+  setIsLoading(true);
+  return signInWithPopup(auth, googleProvider)
+    .finally(() => setIsLoading(false));
+};
 
-    const logOut =  ()=> {
-        setIsLoading(false)
-        return signOut(auth)
-    }
+const logOut = () => {
+  setIsLoading(true);
+  return signOut(auth)
+    .finally(() => setIsLoading(false));
+};
+
 
    
   React.useEffect(() => {
