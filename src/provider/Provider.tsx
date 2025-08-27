@@ -1,81 +1,121 @@
-import React, { createContext, useState } from 'react'
-// import { AuthContext } from './Provider';
-import app from './../firebase/firebase.config';
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut, User, UserCredential}  from "firebase/auth"
-
-
-
-// type userType = {
-//     id:string
-//     name : string
-//     email :  string
-// } | null
+import React, { createContext, useState, useEffect } from "react";
+import app from "./../firebase/firebase.config";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  User,
+  UserCredential,
+  getRedirectResult,
+} from "firebase/auth";
 
 export type AuthContextType = {
-     user: User | null
-    
-    isLoading: boolean
-     createUser: (email: string, password: string) => Promise<UserCredential>;
+  user: User | null;
+  isLoading: boolean;
+  createUser: (email: string, password: string) => Promise<UserCredential>;
   signIn: (email: string, password: string) => Promise<UserCredential>;
-  googleSignIn: () => Promise<UserCredential>;
+  googleSignInPopup: () => Promise<UserCredential | void>;
+  googleSignInRedirect: () => void;
   logOut: () => Promise<void>;
-} 
-
-export const AuthContext = createContext<AuthContextType| undefined > (undefined)
-const auth = getAuth(app)
-const AuthProvider = ({children}: { children: React.ReactNode }) => {
-
-    const [user,setUser] = useState<User |null>(null)
-    const [isLoading,setIsLoading] = useState(false)
-     const googleProvider = new GoogleAuthProvider()
-
-    const createUser = (email: string, password: string) => {
-  setIsLoading(true);
-  return createUserWithEmailAndPassword(auth, email, password)
-    .finally(() => setIsLoading(false));
 };
 
-const signIn = (email: string, password: string) => {
-  setIsLoading(true);
-  return signInWithEmailAndPassword(auth, email, password)
-    .finally(() => setIsLoading(false));
-};
+export const AuthContext = createContext<AuthContextType | undefined>(
+  undefined
+);
 
-const googleSignIn = () => {
-  setIsLoading(true);
-  return signInWithPopup(auth, googleProvider)
-    .finally(() => setIsLoading(false));
-};
+const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
 
-const logOut = () => {
-  setIsLoading(true);
-  return signOut(auth)
-    .finally(() => setIsLoading(false));
-};
+const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-
-   
-  React.useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      setUser(currentUser)
+  // Create User (Email/Password)
+  const createUser = (email: string, password: string) => {
+    setIsLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password).finally(() =>
       setIsLoading(false)
-    })
-    return () => unsubscribe()
-  }, [auth])
+    );
+  };
 
-    const authInfo = {
-        user,
-        isLoading,
-        createUser,
-        signIn,
-        googleSignIn,
-        logOut,
+  // Sign In (Email/Password)
+  const signIn = (email: string, password: string) => {
+    setIsLoading(true);
+    return signInWithEmailAndPassword(auth, email, password).finally(() =>
+      setIsLoading(false)
+    );
+  };
+
+  // Google Sign-In (Popup)
+  const googleSignInPopup = async () => {
+    setIsLoading(true);
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      setUser(result.user);
+      return result;
+    } catch (error: any) {
+      if (error.code === "auth/popup-closed-by-user") {
+        alert("Login cancelled. Please complete the popup to sign in.");
+      } else {
+        console.error("Google Sign-In Error:", error);
+      }
+    } finally {
+      setIsLoading(false);
     }
-  return (
-    <AuthContext.Provider value={authInfo}>
-        {children}
-    </AuthContext.Provider>
-  )
-}
+  };
 
-export default AuthProvider
+  // Google Sign-In (Redirect)
+  const googleSignInRedirect = () => {
+    setIsLoading(true);
+    signInWithRedirect(auth, googleProvider);
+  };
+
+  // Handle Redirect Result
+  useEffect(() => {
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result) {
+          setUser(result.user);
+        }
+      })
+      .catch((error) => {
+        console.error("Redirect Login Error:", error);
+      })
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  // Auth State Change
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setIsLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const logOut = () => {
+    setIsLoading(true);
+    return signOut(auth).finally(() => setIsLoading(false));
+  };
+
+  const authInfo = {
+    user,
+    isLoading,
+    createUser,
+    signIn,
+    googleSignInPopup,
+    googleSignInRedirect,
+    logOut,
+  };
+
+  return (
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+  );
+};
+
+export default AuthProvider;

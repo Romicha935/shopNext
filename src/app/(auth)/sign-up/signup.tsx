@@ -18,7 +18,7 @@ type SignUpFormData = {
 const SignUp = () => {
     const {register,handleSubmit, formState: {errors}}  = useForm<SignUpFormData>()
     const [showPassword,setShopPassword] = useState(false)
-    const {createUser,googleSignIn} = useAuth()
+    const {createUser,googleSignInPopup} = useAuth()
     const router = useRouter()
 
     
@@ -59,7 +59,7 @@ const SignUp = () => {
      }
 
      const handleGoogleSignIn = () => {
-    googleSignIn()
+    googleSignInPopup()
       .then(result => {
         Swal.fire({
           icon: 'success',

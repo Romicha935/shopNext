@@ -12,7 +12,7 @@ type SignInFormData = {
 
 const SignIn = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<SignInFormData>()
-  const { signIn, googleSignIn } = useAuth()
+  const { signIn, googleSignInPopup } = useAuth()
   const router = useRouter()
   const [loading, setLoading] = useState(false)
 
@@ -43,7 +43,7 @@ const SignIn = () => {
   // Google Sign-In
   const handleGoogleSignIn = () => {
     setLoading(true)
-    googleSignIn()
+ googleSignInPopup()
       .then(result => {
         setLoading(false)
         Swal.fire({
