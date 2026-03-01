@@ -6,7 +6,7 @@ import { IProduct } from '@/types'
 export async function getTodaysDeals(): Promise<IProduct[]> {
   try {
     const client = await clientPromise
-    const db = client.db('nextShop')
+   const db = client.db('nextjs-nextShop')
     
     const products = await db
       .collection<IProduct>('todays-deal')
@@ -24,7 +24,7 @@ export async function getTodaysDeals(): Promise<IProduct[]> {
 export async function getBestSellingProducts(): Promise<IProduct[]> {
   try {
     const client = await clientPromise
-    const db = client.db('nextShop')
+    const db = client.db('nextjs-nextShop')
     const products = await db
       .collection<IProduct>('bestSelling')
       .find({})
@@ -40,7 +40,7 @@ export async function getBestSellingProducts(): Promise<IProduct[]> {
 export async function getFeaturedProducts(): Promise<IProduct[]> {
   try {
     const client = await clientPromise
-    const db = client.db('nextShop')
+    const db = client.db('nextjs-nextShop')
     
  
     const products = await db
@@ -59,7 +59,7 @@ export async function getFeaturedProducts(): Promise<IProduct[]> {
 export async function getProductsByTag(tag: string): Promise<IProduct[]> {
   try {
     const client = await clientPromise
-    const db = client.db('nextShop')
+    const db = client.db('nextjs-nextShop')
     
     const products = await db
       .collection<IProduct>('products')
